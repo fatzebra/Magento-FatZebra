@@ -1,0 +1,16 @@
+<?xml version="1.0"?>  
+<config>  
+    <modules>  
+        <Osky_Fatzebra>  
+            <active>true</active>
+
+            /**
+             * for now we're telling the system that
+             * this module is just local, it's not a core
+             * or community module and resides in
+             * app/code/local.
+             */
+            <codePool>local</codePool>  
+        </Osky_Fatzebra>  
+    </modules>  
+</config>

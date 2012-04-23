@@ -1,0 +1,178 @@
+<?xml version="1.0"?>
+<config>
+    <sections>
+        
+        /**
+         * here we're telling the system we
+         * we want to add a new config section
+         * in the payment method area
+         */
+        <payment>
+            <groups>
+                <fatzebra translate="label" module="paygate">
+
+                    /**
+                     * human readable module name
+                     * which appears as the name of the
+                     * payment method in the admin section
+                     */
+                    <label>Fat Zebra</label>
+
+                    /** 
+                     * set where this method should appear
+                     * in comparison to the other methods
+                     * within the admin
+                     */
+                    <sort_order>670</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <fields>
+
+                        /**
+                         * you need this field if you want the user to
+                         * be able to disable/enable this payment
+                         * method. leave this out if you don't want
+                         * this to be optional
+                         */
+                        <active translate="label">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+
+                            /**
+                             * we want to use the standard Magento
+                             * yes/no select options
+                             */
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </active>
+
+                        <sandbox translate="label">
+                            <label>Sandbox Mode</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </sandbox>
+                        <testmode translate="label">
+                            <label>Test Mode</label>
+                            <comment>For testing in a non-sandbox environment</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </testmode>
+
+                        <show_logo translate="label">
+                            <label>Show Fat Zebra Logo</label>
+                            <comment>Optional, but we will love you forever if you do</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </show_logo>
+
+                        <cctypes translate="label">
+                            <label>Show Card Logos</label>
+                            <comment>Select which card types you wish to display</comment>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>fatzebra/cardtypes</source_model>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </cctypes>
+
+                        /**
+                         * the below two fields are an example
+                         * of fields you may need if integrating with
+                         * a payment gateway's API. you will see how
+                         * to retrieve these values in your code later
+                         */
+                        <username translate="label">
+                            <label>Username</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </username>
+                        <token translate="label">
+                            <label>Token</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </token>
+
+                        /**
+                         * having this field here allows the user
+                         * to set whether we want payments to be
+                         * authorised or authorised AND captured
+                         * if you don't want the user to choose you
+                         * can leave this field out
+                         */
+                        <payment_action translate="label">
+                            <label>Payment Action</label>
+                            <frontend_type>select</frontend_type>
+
+                            /**
+                             * we're using the source from the paygate
+                             * module as it has the options we want. this
+                             * is safe because the paygate module is a core
+                             * Magento module and therefore will be there
+                             * with any default install. if it makes you feel
+                             * safer you can create your own field source model
+                             * but that isn't covered in this tutorial
+                             */
+                            <source_model>paygate/authorizenet_source_paymentAction</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </payment_action>
+
+                        /**
+                         * what do you want the status to be of
+                         * new orders made using this payment
+                         * method?
+                         */
+                        <order_status translate="label">
+                            <label>New order status</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_order_status_processing</source_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </order_status>
+
+                        /**
+                         * this field lets the user choose the
+                         * name of the payment method as it
+                         * appears to the normal user on your site
+                         */
+                        <title translate="label">
+                            <label>Title</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </title>
+                    </fields>
+                </fatzebra>
+            </groups>
+        </payment>
+    </sections>
+</config>
