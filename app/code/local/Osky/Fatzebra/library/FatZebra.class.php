@@ -225,6 +225,7 @@
 			curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, true);
 			curl_setopt($curl, CURLOPT_CAINFO, dirname(__FILE__) . DIRECTORY_SEPARATOR . 'cacert.pem');
 			curl_setopt($curl, CURLOPT_TIMEOUT, $this->timeout);
+			curl_setopt($curl, CURLOPT_HTTPHEADER, array("User-Agent: Fat Zebra Magento Library 0.1.1"));
 
 			$data = curl_exec($curl); 
 			
