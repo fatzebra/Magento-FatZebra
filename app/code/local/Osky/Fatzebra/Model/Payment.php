@@ -59,7 +59,19 @@ class Osky_Fatzebra_Model_Payment extends Mage_Payment_Model_Method_Cc
 
         if (isset($result->successful) && $result->successful) {
             if ($result->response->successful) {
-                $payment->setStatus(self::STATUS_APPROVED)->setLastTransId($result->response->id);
+                $payment->setStatus(self::STATUS_APPROVED);
+                $payment->setLastTransId($result->response->id);
+                $payment->setTransactionId($result->response->id);
+
+                $invoice = $payment->getCreatedInvoice();
+                $order   = $payment->getOrder();
+                if ($invoice && !$order->getEmailSent()) {
+                    $order->sendNewOrderEmail();
+                    $order->addStatusHistoryComment("Notified customer about invoice #%s.", $invoice->getIncrementId());
+                    $order->setIsCustomerNotified(true);
+                    $order->setEmailSent(true);
+                    $order->save();
+                }
             }
             else {
                 Mage::throwException(print_r($result->response->message,true));
@@ -120,12 +132,14 @@ class Osky_Fatzebra_Model_Payment extends Mage_Payment_Model_Method_Cc
 		$url = $sandbox ? "https://gateway.sandbox.fatzebra.com.au" : "https://gateway.fatzebra.com.au";
 		
 		$info = $this->getInfoInstance();
+        $order = $payment->getOrder();
+        $reference = $order->getIncrementId();
 		
 		try {
 			$gateway = new FatZebra\Gateway($username, $token, $testmode, $url);
 			$purchase_request = new FatZebra\PurchaseRequest(
 				$this->getAmount(), 
-				$info->getCcOwner()."-".time(), 
+				$reference, 
 				str_replace('&', '&amp;', $info->getCcOwner()), 
 				$info->getCcNumber(), 
 				$info->getCcExpMonth() ."/". $info->getCcExpYear(), 
