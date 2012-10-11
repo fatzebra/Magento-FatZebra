@@ -1,26 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
-
-    /**
-     * register the full module name and it's
-     * version
-     */
     <modules>
         <Osky_Fatzebra>
-            <version>0.1.0</version>
+            <version>0.1.2</version>
         </Osky_Fatzebra>
     </modules>
-
-    /**
-     * global module configuration
-     */
     <global>
-
-        /**
-         * register the module's model group
-         * note that we use the module's alias 
-         * mentioned in the prerequisites
-         */
         <models>
             <fatzebra>
                 <class>Osky_Fatzebra_Model</class>
@@ -34,13 +19,6 @@
         <blocks>
             <fatzebra><class>Osky_Fatzebra_Block</class></fatzebra>
         </blocks>
-
-        /**
-         * set which resources the module will
-         * use when setting up, writing to the db
-         * and reading from the db. we're going 
-         * to use the core connections.
-         */
         <resources>
             <fatzebra_setup>
                 <setup>
@@ -65,51 +43,15 @@
 	<default>
         <payment>
             <fatzebra>
-
-                /**
-                 * is this payment method enabled?
-                 */
                 <active>0</active>
-
-                /**
-                 * this is where we tell the system what
-                 * class to use to handle all of the payment
-                 * logic. we call this class the payment 
-                 * adapter model class. you can change the 
-                 * paymentLogic bit to be what you want 
-                 * but it has to be lowerCamelCase and 
-                 * the class name will have to be changed later
-                 * on as you will see
-                 */
                 <model>fatzebra/payment</model>
-
                 <order_status>pending</order_status>
                 <title>Fat Zebra</title>
-
                 <username>TEST</username>
                 <token>TEST</token>
-
-                /**
-                 * this is the default set of allowed credit
-                 * card types. leave this as it is for now
-                 */
                 <cctypes>AE,VI,MC,JCB</cctypes>
                 <show_logo>1</show_logo>
-
-                /**
-                 * this should be authorize or authorize_capture
-                 * you can probably guess that authorize just
-                 * authorizes the payment but authorize_capture
-                 * processes it as well
-                 */
                 <payment_action>authorize_capture</payment_action>
-
-                /**
-                 * this field is used to say whether you only
-                 * want this method to be used for certain
-                 * countries but that is not covered by this
-                 * tutorial
-                 */
                 <allowspecific>0</allowspecific>
             </fatzebra>
         </payment>
