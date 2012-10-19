@@ -4,6 +4,9 @@
         <Osky_Fatzebra>  
             <active>true</active>
             <codePool>community</codePool>  
+            <depends>
+              <Mage_Payment />
+            </depends>
         </Osky_Fatzebra>  
     </modules>  
 </config>
