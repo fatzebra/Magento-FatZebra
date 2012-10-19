@@ -74,7 +74,7 @@ class Osky_Fatzebra_Model_Payment extends Mage_Payment_Model_Method_Cc
             }
 		}
 		else {
-			$message = Mage::helper('fatzebra')->__('There has been an error processing your payment. %s', $result);
+			$message = Mage::helper('fatzebra')->__('There has been an error processing your payment. %s', implode(", ", $result->errors));
             Mage::throwException($message);
         } 
 		
