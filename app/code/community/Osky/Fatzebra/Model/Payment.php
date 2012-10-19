@@ -191,7 +191,7 @@ class Osky_Fatzebra_Model_Payment extends Mage_Payment_Model_Method_Cc
 
         if (is_null($response)) {
             $response = array("successful" => false,
-                              "result" => null)
+                              "result" => null);
             $err = json_last_error();
             if ($err == JSON_ERROR_SYNTAX) {
                 $result["errors"] = array("JSON Syntax error. JSON attempted to parse: " . $data);
@@ -204,4 +204,3 @@ class Osky_Fatzebra_Model_Payment extends Mage_Payment_Model_Method_Cc
         return $response;
     }
 }
-?>
