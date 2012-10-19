@@ -1,0 +1,94 @@
+<_>
+   <form_key>snpvmComZuu0NIzz</form_key>
+   <name>FatZebra</name>
+   <channel>community</channel>
+   <version_ids>
+      <version_ids>2</version_ids>
+   </version_ids>
+   <summary>Accept Credit Card Payments quickly and simply with Fat Zebra</summary>
+   <description>Fat Zebra Online Payment Gateway Module
+
+The Fat Zebra extension for Magento simplifies the way you take payments for all credit cards allowing you to trade around the clock. Our extension makes running your online store Simple, Secure and Reliable.</description>
+   <license>GNU General Public License (GPL)</license>
+   <license_uri>http://www.gnu.org/licenses/gpl.html</license_uri>
+   <version>2.0.1</version>
+   <stability>stable</stability>
+   <notes>This release has been updated to fix a number of issues, including:
+
+* Incorrect reference being used
+* Invoice not being sent upon successful payment
+* Missing manifest and module definition causing installation errors</notes>
+   <authors>
+      <name>
+         <name>Matthew Savage</name>
+         <name>Osky</name>
+      </name>
+      <user>
+         <user>fatzebra</user>
+         <user>Osky</user>
+      </user>
+      <email>
+         <email>matthew.savage@fatzebra.com.au</email>
+         <email>andrew.byrne@oskyinteractive.com.au</email>
+      </email>
+   </authors>
+   <depends_php_min>5.2.0</depends_php_min>
+   <depends_php_max>6.0.0</depends_php_max>
+   <depends>
+      <package>
+         <name>
+            <name/>
+         </name>
+         <channel>
+            <channel/>
+         </channel>
+         <min>
+            <min/>
+         </min>
+         <max>
+            <max/>
+         </max>
+         <files>
+            <files>         </files>
+         </files>
+      </package>
+      <extension>
+         <name>
+            <name>Core</name>
+         </name>
+         <min>
+            <min/>
+         </min>
+         <max>
+            <max/>
+         </max>
+      </extension>
+   </depends>
+   <contents>
+      <target>
+         <target>magelocal</target>
+         <target>magecommunity</target>
+         <target>mageetc</target>
+      </target>
+      <path>
+         <path/>
+         <path>Osky/Fatzebra</path>
+         <path>modules/Osky_Fatzebra.xml</path>
+      </path>
+      <type>
+         <type>file</type>
+         <type>dir</type>
+         <type>file</type>
+      </type>
+      <include>
+         <include/>
+         <include/>
+         <include/>
+      </include>
+      <ignore>
+         <ignore/>
+         <ignore/>
+         <ignore/>
+      </ignore>
+   </contents>
+</_>
