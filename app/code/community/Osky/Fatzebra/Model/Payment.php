@@ -63,8 +63,6 @@ class Osky_Fatzebra_Model_Payment extends Mage_Payment_Model_Method_Cc
                 if($invoice && !$invoice->getEmailSent()) {
                     $invoice->pay(); // Mark the invoice as paid
                     $invoice->addComment("Payment made by Credit Card. Reference " . $result->response->id, false, true);
-                    $invoice->register();
-                    $invoice->save();
                     $invoice->sendEmail();
                     $invoice->save();
                 }
