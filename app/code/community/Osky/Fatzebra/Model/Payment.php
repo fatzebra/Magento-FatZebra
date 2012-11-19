@@ -1,7 +1,7 @@
 <?php  
 class Osky_Fatzebra_Model_Payment extends Mage_Payment_Model_Method_Cc
 {
-    const VERSION = "2.0.1";
+    const VERSION = "2.0.2";
     protected $_code = 'fatzebra';
 	
     protected $_isGateway               = true;
