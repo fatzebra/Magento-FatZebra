@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
-    <name>FatZebra</name>
-    <version>2.0.1</version>
+    <name>Osky_Fatzebra</name>
+    <version>2.0.2</version>
     <stability>stable</stability>
     <license uri="http://www.gnu.org/licenses/gpl.html">GNU General Public License (GPL)</license>
     <channel>community</channel>
@@ -10,15 +10,11 @@
     <description>Fat Zebra Online Payment Gateway Module&#xD;
 &#xD;
 The Fat Zebra extension for Magento simplifies the way you take payments for all credit cards allowing you to trade around the clock. Our extension makes running your online store Simple, Secure and Reliable.</description>
-    <notes>This release has been updated to fix a number of issues, including:&#xD;
-&#xD;
-* Incorrect reference being used&#xD;
-* Invoice not being sent upon successful payment&#xD;
-* Missing manifest and module definition causing installation errors</notes>
+    <notes>This release is a minor fix correcting a bug where invoices were being registered twice and skewing the lifetime sales figures.</notes>
     <authors><author><name>Matthew Savage</name><user>fatzebra</user><email>matthew.savage@fatzebra.com.au</email></author><author><name>Osky</name><user>Osky</user><email>andrew.byrne@oskyinteractive.com.au</email></author></authors>
-    <date>2012-10-19</date>
-    <time>06:33:50</time>
-    <contents><target name="magecommunity"><dir name="Osky"><dir name="Fatzebra"><dir name="Block"><file name="Form.php" hash="2cf4c88c1279492e37cde482d851ffb6"/></dir><dir name="Helper"><file name="Data.php" hash="625e6f5ce625b712a3b04b1ae49ced80"/></dir><dir name="Model"><file name="Cardtypes.php" hash="1586574af0f0e6f093d61cd1065d6969"/><file name="Payment.php" hash="8285d96685e6aacd52c141b6171e2005"/></dir><dir name="etc"><file name="config.xml" hash="12ca85ed06876ba0a788d439d6270de4"/><file name="system.xml" hash="84a27e8c4c1f021bc72561d4b1a37016"/></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Osky_Fatzebra.xml" hash="3ecbb4ca346b07e9b6465cdd45e398cf"/></dir></target></contents>
+    <date>2012-11-20</date>
+    <time>00:10:56</time>
+    <contents><target name="magecommunity"><dir name="Osky"><dir name="Fatzebra"><dir name="Block"><file name="Form.php" hash="2cf4c88c1279492e37cde482d851ffb6"/></dir><dir name="Helper"><file name="Data.php" hash="625e6f5ce625b712a3b04b1ae49ced80"/></dir><dir name="Model"><file name="Cardtypes.php" hash="1586574af0f0e6f093d61cd1065d6969"/><file name="Payment.php" hash="46c0008756614f95d5e4bb0db56300c1"/></dir><dir name="etc"><file name="config.xml" hash="37f38a1cd6df7fddff24e61b7f8f5228"/><file name="system.xml" hash="84a27e8c4c1f021bc72561d4b1a37016"/></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Osky_Fatzebra.xml" hash="3ecbb4ca346b07e9b6465cdd45e398cf"/></dir></target></contents>
     <compatible/>
-    <dependencies><required><php><min>5.2.0</min><max>6.0.0</max></php></required></dependencies>
+    <dependencies><required><php><min>5.2.0</min><max>6.0.0</max></php><package><name>Mage_Payment</name><channel>core</channel><min></min><max></max></package></required></dependencies>
 </package>

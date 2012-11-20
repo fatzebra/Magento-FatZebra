@@ -1,6 +1,6 @@
 <_>
-   <form_key>snpvmComZuu0NIzz</form_key>
-   <name>FatZebra</name>
+   <form_key>amspdwdda2fI7dMr</form_key>
+   <name>Osky_Fatzebra</name>
    <channel>community</channel>
    <version_ids>
       <version_ids>2</version_ids>
@@ -11,13 +11,9 @@
 The Fat Zebra extension for Magento simplifies the way you take payments for all credit cards allowing you to trade around the clock. Our extension makes running your online store Simple, Secure and Reliable.</description>
    <license>GNU General Public License (GPL)</license>
    <license_uri>http://www.gnu.org/licenses/gpl.html</license_uri>
-   <version>2.0.1</version>
+   <version>2.0.2</version>
    <stability>stable</stability>
-   <notes>This release has been updated to fix a number of issues, including:
-
-* Incorrect reference being used
-* Invoice not being sent upon successful payment
-* Missing manifest and module definition causing installation errors</notes>
+   <notes>This release is a minor fix correcting a bug where invoices were being registered twice and skewing the lifetime sales figures.</notes>
    <authors>
       <name>
          <name>Matthew Savage</name>
@@ -38,18 +34,23 @@ The Fat Zebra extension for Magento simplifies the way you take payments for all
       <package>
          <name>
             <name/>
+            <name>Mage_Payment</name>
          </name>
          <channel>
             <channel/>
+            <channel>core</channel>
          </channel>
          <min>
+            <min/>
             <min/>
          </min>
          <max>
             <max/>
+            <max/>
          </max>
          <files>
-            <files>         </files>
+            <files>             </files>
+            <files>             </files>
          </files>
       </package>
       <extension>
@@ -91,4 +92,8 @@ The Fat Zebra extension for Magento simplifies the way you take payments for all
          <ignore/>
       </ignore>
    </contents>
+   <page>1</page>
+   <limit>200</limit>
+   <folder/>
+   <package/>
 </_>
