@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Osky_Fatzebra>
-            <version>2.0.2</version>
+            <version>2.0.4</version>
         </Osky_Fatzebra>
     </modules>
     <global>
@@ -40,10 +40,10 @@
             </fatzebra_read>
         </resources>
     </global>
-	<default>
+    <default>
         <payment>
             <fatzebra>
-                <active>0</active>
+                <active>1</active>
                 <model>fatzebra/payment</model>
                 <order_status>pending</order_status>
                 <title>Fat Zebra</title>
