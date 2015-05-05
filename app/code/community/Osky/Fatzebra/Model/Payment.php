@@ -232,9 +232,9 @@ class Osky_Fatzebra_Model_Payment extends Mage_Payment_Model_Method_Cc
       $client->setRawData(json_encode($payload));
     }
     $client->setConfig(array('maxredirects' => 0,
-                             'timeout'      => 30,
-                             'useragent'    => 'User-Agent: Fat Zebra Magento Library ' . self::VERSION
-                            ));
+                             'timeout'      => 30));
+                             
+    $client->setHeaders(array('Accept-Encoding' => 'identity', 'User-Agent' => 'Fat Zebra Magento Library ' . self::VERSION));
     
     try {
       $this->fzlog("{$id}: Fetching purchase.");
